@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../power-bi-shape-maps.Dataset"
+    },
+    "byConnection": null
+  }
+}

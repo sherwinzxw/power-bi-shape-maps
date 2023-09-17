@@ -1,0 +1,817 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DIM Geo Map Topology\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.120.963.0 (23.08)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-AU",
+    "tables": [
+      {
+        "name": "DateTableTemplate_91824071-21a8-45c1-a4f6-29d795edb20c",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "f1d806db-496e-41a3-97f8-cc2dc14f14f6",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "c628a794-7d11-4951-92f9-2d442a42b298",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "2b6003b9-c834-40c1-ad7f-50a466c1e57d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "eafa71ca-27b1-4dc9-88ed-b3779ae2f725",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "9e1312c7-c92e-4ca9-9ea6-ec0982561b51",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "d54b2cf4-df90-4598-9870-ac529ce6b51d",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "bb28e63d-b52a-44a9-a06e-f6c5ac4b12a7",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "684c424b-ddeb-46a2-b469-8de61f846aaa",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "aaa5d365-29b4-4e27-8e29-51e0fba44afc",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "3ce4f887-e7af-41f2-9cc0-4f8318812446",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "8f1e20b2-f143-4cd5-910c-34c7634b419f",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "2ab476cf-540a-4b16-878d-7268bfe9bf6f"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "118cd1cf-84b3-4e43-8649-c68856c0bc55",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_91824071-21a8-45c1-a4f6-29d795edb20c",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DIM Geo Map Topology",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f1f730ee-fc4b-4aba-bf97-934655cc8216",
+            "sourceColumn": "ID",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Postcode",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b23b3834-3d14-4ae6-9340-0460df81b720",
+            "sourceColumn": "Postcode",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Locality",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0eb30d13-de76-4d5c-92e8-8c0f5563c186",
+            "sourceColumn": "Locality",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "State",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a0c3f75d-78cf-44c0-a7c8-ca9b87de55c9",
+            "sourceColumn": "State",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Longitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "aedf8a18-3b14-4983-8ad1-82b48a4724e0",
+            "sourceColumn": "Longitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Latitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "e334371c-31d4-44a3-8c99-f29396fe91ee",
+            "sourceColumn": "Latitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "dc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4a183034-82f3-49a5-868b-a5653ae5e601",
+            "sourceColumn": "dc",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bf1bdb6c-f66e-4cfc-a491-9a99bafe4dda",
+            "sourceColumn": "Type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "34a7e540-004f-4f32-bdb1-4076cbea0ddb",
+            "sourceColumn": "Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sa3",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a530ab16-bdfa-42ce-9fa7-b589cd974711",
+            "sourceColumn": "sa3",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sa3name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "05266fd4-d996-4dc0-b4f5-e3bf373b47c7",
+            "sourceColumn": "sa3name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sa4",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8ce535b1-f62a-41ac-9cf5-10e5820d7a16",
+            "sourceColumn": "sa4",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sa4name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8d1ee012-b9f1-44ac-8c3b-cbee08b6df9a",
+            "sourceColumn": "sa4name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7c727089-182e-455e-a413-1572946a365f",
+            "sourceColumn": "Region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Lat_precise",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "55c5b5d7-bd34-487d-9430-90072df9479e",
+            "sourceColumn": "Lat_precise",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Long_precise",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d8009a27-078f-4b8a-8cdc-f4913b1b5cac",
+            "sourceColumn": "Long_precise",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "SA1_MAINCODE_2011",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cb6ef07d-0ae9-44b4-9347-ca4e2a90297c",
+            "sourceColumn": "SA1_MAINCODE_2011",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SA1_MAINCODE_2016",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "aaf1aa11-f335-4bbd-ae60-2963378a3a03",
+            "sourceColumn": "SA1_MAINCODE_2016",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SA2_MAINCODE_2016",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "942392ea-5d47-4e05-b85b-9281e0e1d85c",
+            "sourceColumn": "SA2_MAINCODE_2016",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SA2_NAME_2016",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6b51b7b8-29f6-4f22-a1af-256a499d36b0",
+            "sourceColumn": "SA2_NAME_2016",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SA3_CODE_2016",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4f09868e-e006-4684-a1db-f9abbde81db5",
+            "sourceColumn": "SA3_CODE_2016",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SA3_NAME_2016",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "aad7a9b4-941d-4f7c-927c-230e7178ddb6",
+            "sourceColumn": "SA3_NAME_2016",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SA4_CODE_2016",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "843f2648-1c9a-46cf-9030-7accd0083076",
+            "sourceColumn": "SA4_CODE_2016",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SA4_NAME_2016",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1a062aa1-8bd8-41e3-a000-fdae8fe698d8",
+            "sourceColumn": "SA4_NAME_2016",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "RA_2011",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d9fe40d9-84af-461f-b502-95a925f2524a",
+            "sourceColumn": "RA_2011",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "RA_2016",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "55579427-d51d-4f22-9be2-f9592549e3ca",
+            "sourceColumn": "RA_2016",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MMM_2015",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5f951ebb-598a-4ced-8773-599af45eefc7",
+            "sourceColumn": "MMM_2015",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MMM_2019",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "acfccfc4-3d72-4845-96c6-139ec721df13",
+            "sourceColumn": "MMM_2019",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CED",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "24793f04-6ad4-41cb-bc0d-6b22c076cce5",
+            "sourceColumn": "CED",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Altitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c26bbb0d-f25f-4cc9-9516-39a4cd1d01bf",
+            "sourceColumn": "Altitude",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Charge Zone",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "49db5703-c7a6-492b-a235-afbaa242242e",
+            "sourceColumn": "Charge Zone",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PHN Code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "51b28f84-f659-4331-b35d-6d3bfe0f646d",
+            "sourceColumn": "PHN Code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PHN Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "040af589-d942-4372-be66-594647b5bb7e",
+            "sourceColumn": "PHN Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LGA Region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8296b84a-c0e7-4ed8-b53e-a65ee0888583",
+            "sourceColumn": "LGA Region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LGA Code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "165ea6ba-80a4-4ee2-9078-f671e1c15fd4",
+            "sourceColumn": "LGA Code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Electorate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "aece31d8-41b6-47a5-a20b-1f886c0fe9d1",
+            "sourceColumn": "Electorate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Electorate Rating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d2b66c7d-33d2-499c-b442-4006c924a23f",
+            "sourceColumn": "Electorate Rating",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "State Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b919284c-609e-43db-9b11-a578d3931b04",
+            "sourceColumn": "State Name",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "de570802-60a1-426e-a6d0-5427e7bb029a",
+        "partitions": [
+          {
+            "name": "DIM Geo Map Topology",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"D:\\repos\\sherwinzxw\\australian-spatial-data\\data\\private_data\\DIM Postcode Australia.csv\"),[Delimiter=\",\", Columns=37, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"id\", Int64.Type}, {\"postcode\", type text}, {\"locality\", type text}, {\"state\", type text}, {\"long\", type number}, {\"lat\", type number}, {\"dc\", type text}, {\"type\", type text}, {\"status\", type text}, {\"sa3\", type text}, {\"sa3name\", type text}, {\"sa4\", type text}, {\"sa4name\", type text}, {\"region\", type text}, {\"Lat_precise\", type number}, {\"Long_precise\", type number}, {\"SA1_MAINCODE_2011\", type text}, {\"SA1_MAINCODE_2016\", type text}, {\"SA2_MAINCODE_2016\", type text}, {\"SA2_NAME_2016\", type text}, {\"SA3_CODE_2016\", type text}, {\"SA3_NAME_2016\", type text}, {\"SA4_CODE_2016\", type text}, {\"SA4_NAME_2016\", type text}, {\"RA_2011\", type text}, {\"RA_2016\", type text}, {\"MMM_2015\", type text}, {\"MMM_2019\", type text}, {\"ced\", type text}, {\"altitude\", type number}, {\"chargezone\", type text}, {\"phn_code\", type text}, {\"phn_name\", type text}, {\"lgaregion\", type text}, {\"lgacode\", type text}, {\"electorate\", type text}, {\"electoraterating\", type text}}),",
+                "    #\"Added Conditional Column\" = Table.AddColumn(#\"Changed Type\", \"state_name\", each if [state] = \"NSW\" then \"New South Wales\" else if [state] = \"QLD\" then \"Queensland\" else if [state] = \"WA\" then \"Western Australia\" else if [state] = \"SA\" then \"South Australia\" else if [state] = \"TAS\" then \"Tasmania\" else if [state] = \"ACT\" then \"Australian Capital Territory\" else if [state] = \"NT\" then \"Northern Territory\" else if [state] = \"VIC\" then \"Victoria\" else \"Other Territories\"),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Added Conditional Column\",{{\"lgacode\", \"LGA Code\"}, {\"electorate\", \"Electorate\"}, {\"electoraterating\", \"Electorate Rating\"}, {\"state_name\", \"State Name\"}, {\"phn_code\", \"PHN Code\"}, {\"phn_name\", \"PHN Name\"}, {\"lgaregion\", \"LGA Region\"}, {\"chargezone\", \"Charge Zone\"}, {\"altitude\", \"Altitude\"}, {\"ced\", \"CED\"}, {\"id\", \"ID\"}, {\"postcode\", \"Postcode\"}, {\"locality\", \"Locality\"}, {\"state\", \"State\"}, {\"long\", \"Longitude\"}, {\"lat\", \"Latitude\"}, {\"type\", \"Type\"}, {\"status\", \"Status\"}, {\"region\", \"Region\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
