@@ -1,5 +1,5 @@
 # Power BI Shape Map Templates (ToPoJSON)
-A repository of the Power BI project that produces the Share Map templates for varied levels of Australian territories and regions.
+A repository of the Power BI project that produces the Share Map templates for varied levels of Australian territories and regions. </br>
 
 ![image](https://github.com/sherwinzxw/power-bi-shape-maps/assets/12377619/636c335f-27bb-4409-a278-2d930e8a00e5)
 
